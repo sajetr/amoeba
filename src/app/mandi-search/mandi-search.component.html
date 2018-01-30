@@ -1,0 +1,10 @@
+<!-- Is a 2 way binding required below? -->
+<div class='search-parent-container'>
+  <input type="text" [(ngModel)]="consumableName" 
+         title="{{consumable}}" placeholder="{{consumable}}"/>
+  <input type="text" [(ngModel)]="villageOrTalukName" 
+         title="{{villageOrTaluk}}" placeholder="{{villageOrTaluk}}"/>
+  <input type="text" [(ngModel)]="cityName" title="{{city}}" placeholder="{{city}}"/>
+  <input type="text" [(ngModel)]="stateName" title="{{state}}" placeholder="{{state}}"/>
+  <button type="submit" [name]="submit" (click)="onSubmit()">{{submit}}</button>
+</div>
