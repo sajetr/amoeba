@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mandi-search',
@@ -16,12 +16,12 @@ export class MandiSearchComponent implements OnInit {
   mandi = 'Mandi';
   submit = 'Submit';
 
-  @Input() consumableName: string;
-  @Input() villageOrTalukName: string;
-  @Input() cityName: string;
-  @Input() stateName: string;
+  consumableName: string;
+  villageOrTalukName: string;
+  cityName: string;
+  stateName: string;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

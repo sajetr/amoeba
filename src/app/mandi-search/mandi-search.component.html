@@ -1,10 +1,15 @@
-<!-- Is a 2 way binding required below? -->
 <div class='search-parent-container'>
-  <input type="text" [(ngModel)]="consumableName" 
-         title="{{consumable}}" placeholder="{{consumable}}"/>
-  <input type="text" [(ngModel)]="villageOrTalukName" 
+  <input type="text" [(ngModel)]="consumableName"
+         title="{{consumable}}" autofocus="autofocus" placeholder="{{consumable}}"/>
+  <!--<div class='alert-error-entry' [class]="isWrongConsumableEntry===true?'none-display':''">
+    <span>You have entered {{consumableName}} which does not exist. Please enter a value that exists</span>
+  </div>-->
+  <input type="text" [(ngModel)]="villageOrTalukName"
          title="{{villageOrTaluk}}" placeholder="{{villageOrTaluk}}"/>
-  <input type="text" [(ngModel)]="cityName" title="{{city}}" placeholder="{{city}}"/>
-  <input type="text" [(ngModel)]="stateName" title="{{state}}" placeholder="{{state}}"/>
-  <button type="submit" [name]="submit" (click)="onSubmit()">{{submit}}</button>
+  <input type="text" [(ngModel)]="cityName"
+         title="{{city}}" placeholder="{{city}}"/>
+  <input type="text" [(ngModel)]="stateName"
+         title="{{state}}" placeholder="{{state}}"/>
+  <button type="submit" [name]="submit" 
+         (click)="onSubmit()">{{submit}}</button>
 </div>
