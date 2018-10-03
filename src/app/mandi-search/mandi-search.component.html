@@ -1,9 +1,7 @@
-<div class='search-parent-container'>
+<div class='search-encloser'>
+<div class='search-flex-container'>
   <input type="text" [(ngModel)]="consumableName"
          title="{{consumable}}" autofocus="autofocus" placeholder="{{consumable}}"/>
-  <!--<div class='alert-error-entry' [class]="isWrongConsumableEntry===true?'none-display':''">
-    <span>You have entered {{consumableName}} which does not exist. Please enter a value that exists</span>
-  </div>-->
   <input type="text" [(ngModel)]="villageOrTalukName"
          title="{{villageOrTaluk}}" placeholder="{{villageOrTaluk}}"/>
   <input type="text" [(ngModel)]="cityName"
@@ -12,4 +10,5 @@
          title="{{state}}" placeholder="{{state}}"/>
   <button type="submit" [name]="submit" 
          (click)="onSubmit()">{{submit}}</button>
+</div>
 </div>
