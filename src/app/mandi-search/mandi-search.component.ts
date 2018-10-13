@@ -23,7 +23,7 @@ export class MandiSearchComponent implements OnInit {
   consumableName: string;
   villageOrTalukName: string;
   cityName: string;
-  stateName: string;
+  stateName: State;
   states: State[];
 
   search = (stateName: Observable<string>) =>
@@ -45,7 +45,7 @@ export class MandiSearchComponent implements OnInit {
 
   public onSubmit() {
     alert('Consumable, villageOrTaluk, city and state entered is ' + this.consumableName +
-    ' ' + this.villageOrTalukName + ' ' + this.cityName + ' ' + this.stateName);
+    ' ' + this.villageOrTalukName + ' ' + this.cityName + ' ' + this.stateName.name);
   }
 
 }
