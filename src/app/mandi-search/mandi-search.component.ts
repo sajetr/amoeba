@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { StatesService } from '../services/states.service';
+import { State } from '../services/state';
 
 @Component({
   selector: 'app-mandi-search',
@@ -20,10 +24,23 @@ export class MandiSearchComponent implements OnInit {
   villageOrTalukName: string;
   cityName: string;
   stateName: string;
+  states: State[];
 
-  constructor() {}
+  search = (stateName: Observable<string>) =>
+    stateName.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map(term => term.length < 2 ? []
+        : this.states.filter(v => v.name.toLowerCase().indexOf(term.toLowerCase()) > -1)
+        .slice(0, 10))
+    )
+
+  formatter = (formattedResultState: State) => formattedResultState.name;
+
+  constructor(private statesService: StatesService) {}
 
   ngOnInit() {
+    this.states = this.statesService.getStates();
   }
 
   public onSubmit() {

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
 import { MandiSearchComponent } from './mandi-search/mandi-search.component';
 
@@ -13,7 +15,8 @@ import { MandiSearchComponent } from './mandi-search/mandi-search.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

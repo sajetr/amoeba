@@ -6,8 +6,15 @@
          title="{{villageOrTaluk}}" placeholder="{{villageOrTaluk}}"/>
   <input type="text" [(ngModel)]="cityName"
          title="{{city}}" placeholder="{{city}}"/>
+  
+  <ng-template #rt let-r="result" let-t="term">
+    <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+  </ng-template>
   <input type="text" [(ngModel)]="stateName"
-         title="{{state}}" placeholder="{{state}}"/>
+         title="{{state}}" placeholder="{{state}}" 
+         [ngbTypeahead]="search" editable="true" 
+         showHint="true" [resultTemplate]="rt"
+         [inputFormatter]="formatter"/>
   <button type="submit" [name]="submit" 
          (click)="onSubmit()">{{submit}}</button>
 </div>
