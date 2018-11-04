@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { MandiSearchComponent } from './mandi-search/mandi-search.component';
+import { MandiRoutingModule } from './mandi-routing.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MandiSearchComponent } from './mandi-search/mandi-search.component';
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    MandiRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
